@@ -39,6 +39,7 @@ $nomorInduk = $_SESSION["nomorInduk"];
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="Mahasiswa/style.css">
 
     <!-- =======================================================
   * Template Name: NiceAdmin
@@ -150,8 +151,20 @@ $nomorInduk = $_SESSION["nomorInduk"];
                     <span>Dashboard</span>
                 </a>
             </li><!-- End Dashboard Nav -->
-
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="users-profile.html">
+                    <i class="bi bi-person"></i>
+                    <span>Profile</span>
+                </a>
+            </li><!-- End Profile Page Nav -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="users-profile.html">
+                    <i class="bi bi-view-list"></i>
+                    <span>Ruangan</span>
+                </a>
+            </li>
         </ul>
+
 
     </aside><!-- End Sidebar-->
 
@@ -166,13 +179,36 @@ $nomorInduk = $_SESSION["nomorInduk"];
                 </ol>
             </nav>
         </div><!-- End Page Title -->
-
         <section class="section dashboard">
-        
+            <div class="container">
+                <div class="card">
+                    <h2 class="card-title">Daftar Ruang Kelas</h2>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Ruang Kelas</th>
+                                <th>Tanggal</th>
+                                <th>Waktu</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>AA 301</td>
+                                <td>12/04/2022</td>
+                                <td>09:00 - 11:00</td>
+                                <td>Dipakai</td>
+                            </tr>
+                            <!-- tambahkan data peminjaman lainnya di sini -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </section>
-
     </main><!-- End #main -->
-
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
         <div class="copyright">
