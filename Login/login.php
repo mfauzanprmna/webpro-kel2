@@ -1,20 +1,7 @@
 <?php
-include "service/database.php";
+include "../koneksi.php";
 
 $notification = ""; // Variabel notifikasi
-
-function registerUser($conn, $username, $password) {
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-    // Insert new user into the database
-    $insertUserQuery = "INSERT INTO users (username, password) VALUES ('$username', '$hashedPassword')";
-    
-    if ($conn->query($insertUserQuery)) {
-        $notification = "Registration successful!";
-    } else {
-        $notification = "Registration failed: " . $conn->error;
-    }
-}
 
 // Cek apakah ada notifikasi dari parameter URL
 if (isset($_GET['notification'])) {
@@ -22,20 +9,24 @@ if (isset($_GET['notification'])) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
+    $nomorInduk = $_POST['nomorInduk'];
     $password = $_POST['password'];
 
-    $sql = "SELECT * FROM users WHERE username='$username'";
+    $sql = "SELECT * FROM users WHERE NomorInduk = '$nomorInduk'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         $data = $result->fetch_assoc();
-        $hashedPassword = $data["password"];
+        // $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $hashedPassword = $data["Password"];
 
         if (password_verify($password, $hashedPassword)) {
             session_start();
-            $_SESSION["username"] = $username;
-            header("Location: dashboard.php");
+
+            setcookie("role", $data["Role"], time() + 3600, "/");
+
+            $_SESSION["nomorInduk"] = $nomorInduk;
+            header("Location: ../dashboard.php");
             exit();
         } else {
             $notification = "Password salah";
@@ -43,13 +34,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         if (isset($_POST['login'])) {
             $notification = "Akun tidak ditemukan";
-        } else if (isset($_POST['register'])) {
-            registerUser($conn, $username, $password);
-            // Setelah pendaftaran berhasil, alihkan ke halaman login dengan notifikasi
-            if ($notification !== "") {
-                header("Location: login.php?notification=$notification");
-                exit();
-            }
         }
     }
 }
@@ -95,8 +79,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="bg-white rounded-lg p-8 max-w-md w-full">
         <h2 class="text-2xl font-bold mb-4 text-green-500">Sign In</h2>
         <form action="login.php" method="post">
-            <label for="username" class="block text-gray-700 text-sm font-bold mb-2">Username:</label>
-            <input type="text" id="username" name="username" required
+            <label for="nomorInduk" class="block text-gray-700 text-sm font-bold mb-2">NIM/NIDN:</label>
+            <input type="text" id="nomorInduk" name="nomorInduk" required
                 class="border border-gray-300 rounded w-full py-2 px-3 focus:outline-none focus:border-green-500 mb-4">
 
             <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password:</label>

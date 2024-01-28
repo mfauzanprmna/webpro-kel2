@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+// Periksa apakah pengguna sudah memiliki sesi login atau cookie
+if (isset($_SESSION["nomorInduk"]) || isset($_COOKIE["nomorInduk"])) {
+    // Jika sudah login, arahkan ke halaman selamat datang atau halaman lain
+    header("location: ../dashboard.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,15 +23,15 @@
         <h2 class="text-2xl font-bold mb-4 text-green-500">Sign In</h2>
         <form action="login.php" method="post">
             <div class="mb-4">
-                <label for="username" class="block text-gray-700 text-sm font-bold mb-2">Username:</label>
-                <input type="text" id="username" name="username" required
-                    class="border border-gray-300 rounded w-full py-2 px-3 focus:outline-none focus:border-green-500">
+                <label for="nomorInduk" class="block text-gray-700 text-sm font-bold mb-2">NIM/NIDN:</label>
+                <input type="text" id="nomorInduk" name="nomorInduk" required
+                    class="border border-gray-300 rounded w-full py-2 px-3 focus:outline-none focus:border-green-500 mb-4">
             </div>
 
             <div class="mb-4">
                 <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password:</label>
                 <input type="password" id="password" name="password" required
-                    class="border border-gray-300 rounded w-full py-2 px-3 focus:outline-none focus:border-green-500">
+                    class="border border-gray-300 rounded w-full py-2 px-3 focus:outline-none focus:border-green-500 mb-4">
             </div>
 
             <button type="submit" name="login"
