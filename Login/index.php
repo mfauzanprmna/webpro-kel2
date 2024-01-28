@@ -9,7 +9,7 @@
 </head>
 <body class="bg-green-500 flex items-center justify-center h-screen">
     <div class="bg-white rounded-lg p-8 max-w-md w-full">
-        <h2 class="text-2xl font-bold mb-4 text-green-500">Welcome to the Login Page</h2>
+        <h2 class="text-2xl font-bold mb-4 text-green-500">Sign In</h2>
         <form action="login.php" method="post">
             <div class="mb-4">
                 <label for="username" class="block text-gray-700 text-sm font-bold mb-2">Username:</label>
