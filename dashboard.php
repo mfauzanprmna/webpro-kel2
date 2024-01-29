@@ -16,7 +16,7 @@ $nomorInduk = $_SESSION["nomorInduk"];
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Dashboard - NiceAdmin Bootstrap Template</title>
+    <title>Dashboard</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -40,6 +40,7 @@ $nomorInduk = $_SESSION["nomorInduk"];
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="Mahasiswa/style.css">
+    <link rel="import" href="mahasiswa/mahasiswa.html">
 
     <!-- =======================================================
   * Template Name: NiceAdmin
@@ -57,8 +58,8 @@ $nomorInduk = $_SESSION["nomorInduk"];
 
         <div class="d-flex align-items-center justify-content-between">
             <a href="index.html" class="logo d-flex align-items-center">
-                <img src="assets/img/logo.png" alt="">
-                <span class="d-none d-lg-block">NiceAdmin</span>
+                <img src="assets/img/pnj.png" alt="">
+                <span class="d-none d-lg-block">PNJ</span>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </div><!-- End Logo -->
@@ -146,19 +147,19 @@ $nomorInduk = $_SESSION["nomorInduk"];
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link " href="index.html">
+                <a class="nav-link ">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
             </li><!-- End Dashboard Nav -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="users-profile.html">
+                <a class="nav-link collapsed">
                     <i class="bi bi-person"></i>
                     <span>Profile</span>
                 </a>
             </li><!-- End Profile Page Nav -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="users-profile.html">
+                <a class="nav-link collapsed" >
                     <i class="bi bi-view-list"></i>
                     <span>Ruangan</span>
                 </a>
@@ -180,33 +181,9 @@ $nomorInduk = $_SESSION["nomorInduk"];
             </nav>
         </div><!-- End Page Title -->
         <section class="section dashboard">
-            <div class="container">
-                <div class="card">
-                    <h2 class="card-title">Daftar Ruang Kelas</h2>
-
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Ruang Kelas</th>
-                                <th>Tanggal</th>
-                                <th>Waktu</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>AA 301</td>
-                                <td>12/04/2022</td>
-                                <td>09:00 - 11:00</td>
-                                <td>Dipakai</td>
-                            </tr>
-                            <!-- tambahkan data peminjaman lainnya di sini -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            <?php include 'mahasiswa/mahasiswa.php'; ?> 
+            <!-- dashboard mahasiswa -->
+            
         </section>
     </main><!-- End #main -->
     <!-- ======= Footer ======= -->
