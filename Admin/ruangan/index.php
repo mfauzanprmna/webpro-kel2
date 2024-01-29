@@ -48,7 +48,7 @@ if (isset($_GET['hapus'])) {
         <div class="card-body">
           <h2 class="card-title">Tabel Ruangan</h2>
           <div class="d-flex my-3">
-            <a href="http://localhost/webprouas/admin/ruangan/tambah.php">
+            <a href="../../admin/ruangan/tambah.php">
               <button type="button" class="btn btn-success rounded-pill ms-2">
                 Tambah Data
               </button>

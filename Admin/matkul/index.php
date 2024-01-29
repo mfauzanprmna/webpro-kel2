@@ -47,7 +47,7 @@ if (isset($_GET['hapus'])) {
         <div class="card-body">
           <h2 class="card-title">Tabel Mata Kuliah</h2>
           <div class="d-flex my-3">
-            <a href="http://localhost/webprouas/admin/matkul/tambah.php">
+            <a href="../../admin/matkul/tambah.php">
               <button type="button" class="btn btn-success rounded-pill ms-2">
                 Tambah Data
               </button>

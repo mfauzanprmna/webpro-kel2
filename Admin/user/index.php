@@ -47,12 +47,12 @@ if (isset($_GET['hapus'])) {
 
     <div class="row">
         <div class="d-flex justify-content-center mb-3">
-            <a href="http://localhost/webprouas/admin/user?role=mahasiswa">
+            <a href="../../admin/user?role=mahasiswa">
                 <button type="button" class="btn btn-info rounded-pill ms-2">
                     Mahasiswa
                 </button>
             </a>
-            <a href="http://localhost/webprouas/admin/user?role=dosen">
+            <a href="../../admin/user?role=dosen">
                 <button type="button" class="btn btn-info rounded-pill ms-2">
                     Dosen
                 </button>
@@ -67,7 +67,7 @@ if (isset($_GET['hapus'])) {
                 <div class="card-body">
                     <h2 class="card-title">Tabel User</h2>
                     <div class="d-flex my-3">
-                        <a href="http://localhost/webprouas/admin/user/tambah.php?role=<?php echo $role ?>">
+                        <a href="../../admin/user/tambah.php?role=<?php echo $role ?>">
                             <button type="button" class="btn btn-success rounded-pill ms-2">
                                 Tambah Data
                             </button>
