@@ -4,7 +4,7 @@ include '../../koneksi.php';
 
 
 $query = "SELECT ruangan.*, jadwal.Waktu AS Waktu, jadwal.Status AS Status FROM ruangan
-INNER JOIN jadwal ON jadwal.ID_ruangan = ruangan.ID_ruangan";
+LEFT JOIN jadwal ON jadwal.ID_ruangan = ruangan.ID_ruangan";
 
 $hasil = mysqli_query($conn, $query);
 $i = 1;
@@ -72,6 +72,7 @@ if (isset($_GET['hapus'])) {
 
                                     <?php
                                     if ($data['Status'] == 'Offline') {
+                                        date_default_timezone_set('Asia/Jakarta');
                                         $array_kata = explode(" ", $data['Waktu']);
                                         $awal = $array_kata[0];
                                         $akhir = $array_kata[1];
@@ -82,10 +83,14 @@ if (isset($_GET['hapus'])) {
                                                 <span class="badge bg-info text-dark">Sedang Digunakan</span>
                                             </td>
 
+                                        <?php } else { ?>
+                                            <td>
+                                                <span class="badge bg-info text-dark">Tidak Digunakan</span>
+                                            </td>
                                         <?php }
                                     } else { ?>
                                         <td>
-                                            <span class="badge bg-info text-dark">Sedang Digunakan</span>
+                                            <span class="badge bg-info text-dark">Tidak Digunakan</span>
                                         </td>
                                     <?php } ?>
 
