@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 29 Jan 2024 pada 08.57
+-- Waktu pembuatan: 29 Jan 2024 pada 10.32
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.2.0
 
@@ -204,6 +204,7 @@ CREATE TABLE `users` (
   `ID` int(20) NOT NULL,
   `NomorInduk` varchar(255) NOT NULL,
   `Password` varchar(255) NOT NULL,
+  `Nama` varchar(255) NOT NULL,
   `Role` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -211,10 +212,10 @@ CREATE TABLE `users` (
 -- Dumping data untuk tabel `users`
 --
 
-INSERT INTO `users` (`ID`, `NomorInduk`, `Password`, `Role`) VALUES
-(1, 'Admin', '$2y$10$cMtLBY5BTf1zuvniUHob6uIzrgoOspanP7WgZu1hpWqd3ZcDrCkae', 'admin'),
-(2, '198606072019031011', '$2y$10$1vfb/w4xPLy2X0oYwr5DqO3uKo4rxCm.3yTsUB7VMZlmYyOq9aadO', 'dosen'),
-(3, '2207411035', '$2y$10$pjcyemc1/Qh/3al73NCZXuXnI/06Kk99RwW9.U5/wfeoxPfV5UTou', 'mahasiswa');
+INSERT INTO `users` (`ID`, `NomorInduk`, `Password`, `Nama`, `Role`) VALUES
+(1, 'Admin', '$2y$10$cMtLBY5BTf1zuvniUHob6uIzrgoOspanP7WgZu1hpWqd3ZcDrCkae', 'Admin', 'admin'),
+(2, '198606072019031011', '$2y$10$1vfb/w4xPLy2X0oYwr5DqO3uKo4rxCm.3yTsUB7VMZlmYyOq9aadO', 'ANGGI MARDIYONO', 'dosen'),
+(3, '2207411035', '$2y$10$pjcyemc1/Qh/3al73NCZXuXnI/06Kk99RwW9.U5/wfeoxPfV5UTou', 'MUHAMMAD FAUZAN PERMANA', 'mahasiswa');
 
 --
 -- Indexes for dumped tables
