@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 29 Jan 2024 pada 10.32
+-- Waktu pembuatan: 29 Jan 2024 pada 10.43
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.2.0
 
@@ -128,7 +128,11 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`NIM`, `Email`, `Nama`, `JenisKel`, `Semester`, `Kelas`, `Prodi`, `Jurusan`, `Telp`) VALUES
-('2207411035', 'muhammad.fauzan.permana.tik22@mhsw.pnj.id', 'MUHAMMAD FAUZAN PERMANA', 'Laki-laki', 3, '4', 'Teknik Informatika', 'TIK', '0816274173');
+('2207411035', 'muhammad.fauzan.permana.tik22@mhsw.pnj.id', 'MUHAMMAD FAUZAN PERMANA', 'Laki-laki', 3, '4', 'Teknik Informatika', 'TIK', '0816274173'),
+('2207411040', 'juan.graciano.tik22@mhsw.pnj.id', 'JUAN GRACIANO', 'Laki-laki', 3, '4', 'Teknik Informatika', 'TIK', '0816274173'),
+('2207411042', 'handika.nur.aziz.tik22@mhsw.pnj.id', 'HANDIKA NUR AZIZ', 'Laki-laki', 3, '4', 'Teknik Informatika', 'TIK', '0816274173'),
+('2207411051', 'adminas.farhan.putranto.tik22@mhsw.pnj.id', 'ADMINAS FARHAN PUTRANTO', 'Laki-laki', 3, '4', 'Teknik Informatika', 'TIK', '0816274173'),
+('2207411059', 'muhammad.dzaky.naufal.asadel.tik22@mhsw.pnj.id', 'MUHAMMAD DZAKY NAUFAL ASADEL', 'Laki-laki', 3, '4', 'Teknik Informatika', 'TIK', '0816274173');
 
 -- --------------------------------------------------------
 
@@ -215,7 +219,11 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`ID`, `NomorInduk`, `Password`, `Nama`, `Role`) VALUES
 (1, 'Admin', '$2y$10$cMtLBY5BTf1zuvniUHob6uIzrgoOspanP7WgZu1hpWqd3ZcDrCkae', 'Admin', 'admin'),
 (2, '198606072019031011', '$2y$10$1vfb/w4xPLy2X0oYwr5DqO3uKo4rxCm.3yTsUB7VMZlmYyOq9aadO', 'ANGGI MARDIYONO', 'dosen'),
-(3, '2207411035', '$2y$10$pjcyemc1/Qh/3al73NCZXuXnI/06Kk99RwW9.U5/wfeoxPfV5UTou', 'MUHAMMAD FAUZAN PERMANA', 'mahasiswa');
+(3, '2207411035', '$2y$10$pjcyemc1/Qh/3al73NCZXuXnI/06Kk99RwW9.U5/wfeoxPfV5UTou', 'MUHAMMAD FAUZAN PERMANA', 'mahasiswa'),
+(4, '2207411059', '$2y$10$qqn/VYPM18UJXnXOtSf/Negi7Bjx/OEfB7GgQIZi4qn4O7LsXnsYS', 'MUHAMMAD DZAKY NAUFAL ASADEL', 'mahasiswa'),
+(5, '2207411042', '$2y$10$AH6u/3G2rZtSfMZwXFyuuOzTpywN7.0xW8f2JNWsf49uoUScvcTaq', 'HANDIKA NUR AZIZ', 'mahasiswa'),
+(6, '2207411040', '$2y$10$V.oowF77o4K43qz0mMIb.u4oRjHGrOFSfbmihhJj20eBI0NlOX0im', 'JUAN GRACIANO', 'mahasiswa'),
+(7, '2207411051', '$2y$10$Wjcdhqsd90pKxTozcQKiIuA53I6G17kNJNnz2rm4Pdh4OYuswieL.', 'ADMINAS FARHAN PUTRANTO', 'mahasiswa');
 
 --
 -- Indexes for dumped tables
@@ -298,7 +306,7 @@ ALTER TABLE `kelas`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

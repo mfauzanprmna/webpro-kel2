@@ -38,7 +38,7 @@ if (isset($_POST['submit'])) {
         mysqli_stmt_close($stmt);
     }
 
-    $sqlUser = "INSERT INTO users (NomorInduk, Password, Nama, Role) VALUES (?,?,?)";
+    $sqlUser = "INSERT INTO users (NomorInduk, Password, Nama, Role) VALUES (?,?,?,?)";
     $stmt = mysqli_prepare($conn, $sqlUser);
     mysqli_stmt_bind_param($stmt, "ssss", $induk, $password, $nama, $role);
     $queryUser = mysqli_stmt_execute($stmt);
