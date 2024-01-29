@@ -37,7 +37,6 @@ if (isset($_SESSION["nomorInduk"]) || isset($_COOKIE["nomorInduk"])) {
             <button type="submit" name="login"
                 class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-700 focus:outline-none focus:shadow-outline-green active:bg-green-800">Login</button>
         </form>
-        <p class="mt-4 text-gray-700">Don't have an account? <a href="register.php" class="text-green-500 hover:underline">Register here</a></p>
     </div>
 </body>
 </html>

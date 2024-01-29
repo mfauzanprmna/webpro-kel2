@@ -12,7 +12,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nomorInduk = $_POST['nomorInduk'];
     $password = $_POST['password'];
 
-    $sql = "SELECT * FROM users WHERE NomorInduk = '$nomorInduk'";
+    $sql = "SELECT users.*, mahasiswa.Kelas AS Kelas FROM users 
+            LEFT JOIN mahasiswa ON users.nomorInduk = mahasiswa.NIM
+            LEFT JOIN dosen ON users.nomorInduk = dosen.NIP
+            WHERE NomorInduk = '$nomorInduk'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -23,10 +26,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $hashedPassword)) {
             session_start();
 
-            setcookie("role", $data["Role"], time() + 3600, "/");
+            setcookie("role", $data["Role"], 0, "/");
+            setcookie("kelas", $data["Kelas"], 0, "/");
+            setcookie("nama", $data["Nama"], 0, "/");
 
             $_SESSION["nomorInduk"] = $nomorInduk;
-            header("Location: ../dashboard.php");
+
+            header("Location: ../dashboard");
             exit();
         } else {
             $notification = "Password salah";
@@ -45,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
+    <title>Login- Politeknik Negeri Jakarta</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         /* CSS untuk notifikasi */
@@ -94,11 +100,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <!-- Notifikasi -->
         <div id="notification" class="notification">
             <?php echo $notification; ?>
-        </div>
-
-        <!-- Tombol ke register.php -->
-        <div class="mt-4 text-center">
-            <a href="register.php" class="text-green-500 hover:underline">Don't have an account? Register here.</a>
         </div>
 
         <script>

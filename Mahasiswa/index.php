@@ -5,7 +5,7 @@ $query = "SELECT jadwal.*, dosenMatkul.ID AS ID_dosmat, ruangan.nama As Nama, ru
 INNER JOIN dosenMatkul ON dosenmatkul.ID = jadwal.ID_dosenMatkul
 INNER JOIN ruangan ON ruangan.ID_ruangan = jadwal.ID_ruangan
 INNER JOIN kelas ON dosenmatkul.ID_kelas = kelas.ID_kelas
-WHERE dosenmatkul.NIP = $nomorInduk";
+WHERE kelas.ID_kelas = $kelas";
 
 $hasil = mysqli_query($conn, $query);
 $i = 1;
@@ -35,7 +35,7 @@ if (isset($_GET['hapus'])) {
 
         <div class="card">
             <div class="card-body">
-                <h2 class="card-title">Tabel Jadwal</h2>
+                <h2 class="card-title">Tabel Jadwal <?php $kelas ?></h2>
                 <!-- Table with stripped rows -->
                 <table class="table datatable">
                     <thead>
