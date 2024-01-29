@@ -61,7 +61,7 @@ ob_start(); // Mulai buffer output
                                 <td><?php echo $data['kelas'] ?></td>
 
                                 <td>
-                                    <a href="http://localhost/webprouas/admin/user/detail.php?hapus=<?php echo $data['ID'] ?>">
+                                    <a href="../../admin/user/detail.php?hapus=<?php echo $data['ID'] ?>">
                                         <button type="button" class="btn btn-danger ms-2">
                                             Hapus
                                         </button>

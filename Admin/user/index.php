@@ -113,12 +113,12 @@ if (isset($_GET['hapus'])) {
                                         <td><?php echo $data['JenisKel'] ?></td>
                                         <td><?php echo $data['Telp'] ?></td>
                                         <td>
-                                            <a href="http://localhost/webprouas/admin/user/dosenMatkul.php?nip=<?php echo $data['NIP'] ?>">
+                                            <a href="../../admin/user/dosenMatkul.php?nip=<?php echo $data['NIP'] ?>">
                                                 <button type="button" class="btn btn-warning ms-2">
                                                     Add
                                                 </button>
                                             </a>
-                                            <a href="http://localhost/webprouas/admin/user/detail.php?nip=<?php echo $data['NIP'] ?>">
+                                            <a href="../../admin/user/detail.php?nip=<?php echo $data['NIP'] ?>">
                                                 <button type="button" class="btn btn-success ms-2 mt-2">
                                                     Detail
                                                 </button>
